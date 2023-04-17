@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+//computers choice function:
+//generate random number between 1-3
+//store number in variable
+//if 1 = rock, if 2 = paper, if 3 = scissors
+//return the result
+
+function getComputerChoice() {
+    let compRanNum = Math.floor((Math.random() *3)+1);
+    console.log(compRanNum)
+    if (compRanNum === 1) {
+        return "rock";
+    } else if (compRanNum === 2) {
+        return "paper";
+    } else {
+        return "scissors"
+    }
+}
+
+getComputerChoice()
+
+
+
+    </script>
+</body>
+</html>
