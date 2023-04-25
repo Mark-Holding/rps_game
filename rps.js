@@ -5,7 +5,7 @@
 //return the result
 
 const playerSelection = "PAPER";
-const computerSelection = getComputerChoice();
+
 let playerScore = 0;
 let compScore = 0;
 
@@ -20,45 +20,41 @@ function getComputerChoice() {
     }
 }  
 
-
-
-function Play(playerSelection, computerSelection){
-
-    
-
-  return function(playerSelection, computerSelection) {
-
+function playRound(playerSelection) {
+    let computerSelection = getComputerChoice();
     if (playerSelection === computerSelection) {
-        return "Draw, try again";
-    } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
+        console.log("Draw, try again");
+;    } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
         playerScore++;
-        return "You lose. Paper beats rock.";
+        console.log("You lose. Paper beats rock.");
     } else if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
         playerScore++;
-        return "You win. Rock beats scissors.";
+        console.log("You win. Rock beats scissors.");
     } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
         playerScore++;
-        return "You win. Paper beats rock.";
+        console.log("You win. Paper beats rock.");
     } else if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
         compScore++;
-        return "You lose. Scissors beats paper."; 
+        console.log("You lose. Scissors beats paper."); 
     } else if (playerSelection === "SCISSORS" && computerSelection ==="PAPER") {
         playerScore++;
-        return "You win. Scissors beats paper.";
+        console.log("You win. Scissors beats paper.");
     } else if (playerSelection === "SCISSORS" && computerSelection === "ROCK") {
         compScore++;
-        return "You lose. Rock beats scissors."; 
+        console.log("You lose. Rock beats scissors."); 
     } else {
-        return "You must enter either Rock, Paper or Scissors";
-    }
+        console.log("You must enter either Rock, Paper or Scissors");
+    };
 };
 
-
+function game() {
+    for (let i = 0; i < 5; i++){
+    playRound(playerSelection); 
+        console.log(playerScore);
+        console.log(compScore)
+    }
 }
 
+game();
 
-let result = Play(playerSelection, computerSelection);
-console.log( result(playerSelection, computerSelection) );
 
-console.log(playerScore);
-console.log(compScore);
