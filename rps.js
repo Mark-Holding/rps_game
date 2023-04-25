@@ -4,7 +4,7 @@
 //if 1 = rock, if 2 = paper, if 3 = scissors
 //return the result
 
-const playerSelection = "PAPER";
+
 
 let playerScore = 0;
 let compScore = 0;
@@ -25,7 +25,7 @@ function playRound(playerSelection) {
     if (playerSelection === computerSelection) {
         console.log("Draw, try again");
 ;    } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
-        playerScore++;
+        compScore++;
         console.log("You lose. Paper beats rock.");
     } else if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
         playerScore++;
@@ -49,6 +49,8 @@ function playRound(playerSelection) {
 
 function game() {
     for (let i = 0; i < 5; i++){
+    const choicePrompt = prompt('Enter choice');
+    const playerSelection = choicePrompt.toUpperCase();
     playRound(playerSelection); 
         console.log(playerScore);
         console.log(compScore)
